@@ -5,7 +5,7 @@ README for Peer Assessment project
 Files in this repo:
 README.md : This file
 run_analysis.R : Script to extract relevant data, merge and then write tidy data
-tidied_data.txt : Tidied data per requirement (large--contains 66*10299 rows)
+tidied_data.txt : Tidied data per requirement (6 activities, 30 subjects each, 66 variables)
 CodeBook.md : how the data was cleaned up
 
 The assignment used data provide here:

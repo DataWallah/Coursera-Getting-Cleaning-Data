@@ -63,7 +63,9 @@ ids<-c("SubjectID", "ActivityID", "Activity")
 # which leaves mean and SD for a whole set of variables
 # so best do do a diff and get the list
 metrics<-setdiff(colnames(labeled_merged_set),ids)
-tidied_data<-melt(labeled_merged_set,measure.vars=metrics,id=ids)
+temp_data<-melt(labeled_merged_set,measure.vars=metrics,id=ids)
+# now organize by the means for each variable, per subject per activity
+tidied_data<-dcast(temp_data, Activity+SubjectID~variable, mean)    
 
 ###########################################################################
 #
@@ -74,9 +76,6 @@ write.table(tidied_data,"tidied_data.txt")
 
 #
 print("Processing done. Tidied data is in 'tidied_data.txt' in the current directory")
-
-
-
 
 
 
